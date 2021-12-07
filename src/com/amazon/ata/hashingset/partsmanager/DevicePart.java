@@ -1,6 +1,7 @@
 package com.amazon.ata.hashingset.partsmanager;
 
 import java.util.List;
+import java.util.Objects;
 
 public class DevicePart {
     private String manufacturer;
@@ -41,5 +42,27 @@ public class DevicePart {
     public String toString() {
         return String.format("Device Part: {manufacturer: %s, manufacturersPartNumber: %s, devicesUsedIn: %s}",
                 manufacturer, manufacturersPartNumber, devicesUsedIn);
+    }
+
+    // Dont use mutable data in equals and hashcode
+    @Override
+    public boolean equals(Object o) {
+        System.out.println("DevicePart equals()...");
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        DevicePart that = (DevicePart) o;
+        return manufacturer.equals(that.manufacturer) &&
+                manufacturersPartNumber.equals(that.manufacturersPartNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("DevicePart hashCode()...");
+        return Objects.hash(manufacturer, manufacturersPartNumber);
     }
 }

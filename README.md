@@ -45,37 +45,37 @@ Open the `DevicePart` class in the `com.amazon.ata.hashingset.partsmanager` pack
 this class to answer the following questions:
 
 1. What instance variables does `DevicePart` have?
-
+manufacturer, manufacturersPartNumber, devicesUsedIn
 
 
 2. Could this class currently be used in a `HashSet`? Should it? Why or why not?
-
+Use a HashSet to store and find object quicker
 
 
 
 3. What does your team think makes a `DevicePart` unique? 
-
+manufacturersPartNumber
 
 
 4. What instance variables should be used to implement `hashCode()`?
-
+manufacturer, manufacturersPartNumber
 
 
 5. Do any other methods need to be implemented? Should any of the instance variables be used in that method?
-
+equals()
 
 
 6. Individually implement the missing methods in the `DevicePart` class in your Snippets package. You can
 test these methods by running the `DevicePart` test class. When your tests are passing, check the box
 next to your role. Check with your group and see if anyone needs help.
 
-[] Recorder
+[x] Recorder
 
-[] Presenter
+[x] Presenter
 
-[] Manager
+[x] Manager
 
-[] Reflector
+[x] Reflector
 
 ## PART B - Relating hash code value to index
 
@@ -91,16 +91,16 @@ next to your role. Check with your group and see if anyone needs help.
 ```
 *Model 1. A few math calculations.*
 
-1. What symbols are being used in each each equation in *Model 1*?
-
+1. What symbols are being used in each equation in *Model 1*?
+Modulo
 
 
 2. What is the second number in each equation in *Model 1*?
-
+Modulus value
 
 
 3. How does the first number and the number on the right side of the equals sign relate in each equation?
-
+The number on the right is the last digit in the number
 
 
 
@@ -204,12 +204,12 @@ always be an index of the array.
    | Parameter to `add` | # hashes calculated | Hash value | Index calculated | # device parts compared | Return value from `add` | `deviceParts.size()` |
    |-------------------:|---------------------|------------|------------------|-------------------------|-------------------------|----------------------|
    | flex               |          1          | 118352462  |        2         |          0              |          true           |        1             |
-   |                    |                     |            |                  |                         |                         |                      |
-   |                    |                     |            |                  |                         |                         |                      |
-   |                    |                     |            |                  |                         |                         |                      |
-   |                    |                     |            |                  |                         |                         |                      |
-   |                    |                     |            |                  |                         |                         |                      |
-   
+   | button             |                     | 865113938  |                  |                         |                         |                      |
+   | omnidirectional    |                     | 1442407170 |                  |                         |                         |                      |
+   | noiseCancelling    |                     | 1975012498 |                  |                         |                         |                      |
+   | cuiDevice          |                     | 865113938  |                  |                         |                         |                      |
+   | wired              |                     | 118352462  |                  |                         |                         |                      |
+
    *Table 1. Statistics related to adding items to our `HashSet`* 
        
     | 0 | 1 | 2    | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
