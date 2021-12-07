@@ -72,6 +72,17 @@ public class U3S2M1ApplicationTestProgram {
                 System.out.println("-".repeat(50) + "\nadding wired part to HashSet in PartManager...");
                 microphonePartManager.addDevicePart(wired);
 
+                //  Test to find an object in the array method
+                System.out.println("Looking for: " + button);
+                DevicePart foundObject = microphonePartManager.findPart(button);
+                System.out.println(" Found for: " + foundObject);
+
+                DevicePart shannonPart = new DevicePart("Shannon","123", Arrays.asList(AmazonDevice.ECHO_BUDS));
+
+                //  Test to find an object in the array method
+                System.out.println("Looking for: " + shannonPart);
+                foundObject = microphonePartManager.findPart(shannonPart);
+                System.out.println(" Found for: " + foundObject); // Expecting null to be returned
                 return;
         }
 }
